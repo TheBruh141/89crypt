@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ENcrypt"
+version = "1.0.0"
+description = "A small library written for TUBITAK 2204-a for encryption"
+readme = "README.md"
+authors = [
+    { name = "Burak Güngör", email = "burak.gungor@stu.enka.k12.tr" }
+]
+license = { text = "GNU GPLv3" }
+requires-python = ">=3.13"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/TheBruh141/89crypt"
+Repository = "https://github.com/TheBruh141/89crypt"
+
+[tool.black]
+line-length = 88
+target-version = ["py313"]
+include = '\.pyi?$'
+extend-exclude = '''
+# A regex preceded with ^/ will apply only to files and directories
+# in the root of the project.
+^/build/
+^/dist/
+^/.git/
+^/.tox/
+'''
