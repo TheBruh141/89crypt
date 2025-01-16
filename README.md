@@ -42,7 +42,7 @@ print(f"Decrypted message: {decrypted}")
 
 ## Documentation
 
-Full documentation is available at [Read the Docs](https://encryptlib.readthedocs.io/).
+Full documentation is available at [here!](http://thebruh141.github.io/89crypt/).
 
 ## Development
 
