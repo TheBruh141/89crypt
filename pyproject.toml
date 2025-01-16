@@ -5,31 +5,98 @@ build-backend = "hatchling.build"
 [project]
 name = "ENcrypt"
 version = "1.0.0"
-description = "A small library written for TUBITAK 2204-a for encryption"
+description = "A matrix-based encryption library developed for TUBITAK 2204-a"
 readme = "README.md"
-authors = [
-    { name = "Burak Güngör", email = "burak.gungor@stu.enka.k12.tr" }
-]
-license = { text = "GNU GPLv3" }
 requires-python = ">=3.13"
+license = { text = "GNU GPLv3" }
+authors = [
+    { name = "Burak Güngör", email = "burak.gungor@enka.k12.tr" }
+]
 classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
     "Operating System :: OS Independent",
+    "Topic :: Security :: Cryptography",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/encryptlib"]
+
+
+dependencies = [
+    "numpy~=2.2.1",
+    "mpmath~=1.3.0",
+]
+
+[project.optional-dependencies]
+docs = [
+    "sphinx>=7.2.0",
+    "sphinx-book-theme >=1.1.3",
+    "sphinx-autodoc-typehints>=1.25.0",
+    # For markdown support in documentation
+    "myst-parser>=2.0.0",
+]
+
+
+dev = [
+    "black>=24.1.0",
+    "isort>=5.13.0",
+    "mypy>=1.8.0",
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
 ]
 
 [project.urls]
 Homepage = "https://github.com/TheBruh141/89crypt"
 Repository = "https://github.com/TheBruh141/89crypt"
+Documentation = "https://89crypt.readthedocs.io"
+Bug_Tracker = "https://github.com/TheBruh141/89crypt/issues"
 
 [tool.black]
 line-length = 88
 target-version = ["py313"]
 include = '\.pyi?$'
 extend-exclude = '''
-# A regex preceded with ^/ will apply only to files and directories
-# in the root of the project.
 ^/build/
 ^/dist/
 ^/.git/
 ^/.tox/
+^/docs/
 '''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --cov=src/encryptlib"
+testpaths = [
+    "tests",
+]
+
+[tool.coverage.run]
+source = ["src/encryptlib"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == '__main__':",
+    "raise NotImplementedError",
+    "raise ImportError",
+    "except ImportError:",
+]
