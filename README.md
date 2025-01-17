@@ -14,13 +14,13 @@
 ## Installation
 
 ```bash
-pip install encryptlib
+pip install EN-ENcrypt
 ```
 
 For development installation with documentation tools:
 
 ```bash
-pip install "encryptlib[dev,docs]"
+pip install "EN-ENcrypt[dev,docs]"
 ```
 
 ## Quick Start
