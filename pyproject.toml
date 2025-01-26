@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "GNU GPLv3" }
 authors = [
-    { name = "Burak Güngör", email = "burak.gungor@enka.k12.tr" }
+    { name = "Bruh141", email = "141bruh@gmail.com" }
 ]
 classifiers = [
     "Development Status :: 4 - Beta",

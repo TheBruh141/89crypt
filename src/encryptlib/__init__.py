@@ -17,8 +17,8 @@ required_packages = [
 
 
 __version__ = "1.0.0"
-__author__ = "Burak Güngör"
-__email__ = "burak.gungor@enka.k12.tr"
+__author__ = "Bruh141"
+__email__ = "141bruh@gmail.com"
 
 __all__ = [
     "ENcrypt",
