@@ -2,7 +2,7 @@ name: Deploy Sphinx documentation to Pages
 
 on:
   push:
-    branches: [master, TheBruh141-github-actions-test] # branch to trigger deployment
+    branches: [main, TheBruh141-github-actions-test] # branch to trigger deployment
 
 jobs:
   pages:
