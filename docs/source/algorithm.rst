@@ -34,13 +34,15 @@ The method extends this property to numbers of the form :math:`\frac{1}{n9}`, wh
 2. Cryptographic Algorithm
 --------------------------
 
-### 2.1 Key Generation
+2.1 Key Generation
+^^^^^^^^^^^^^^^^^^
 For a given :math:`n`, three cryptographic keys are generated:
 1. Primary key :math:`n` (determines which :math:`\frac{1}{n9}` fraction to use)
 2. Matrix key :math:`K` (2×2 matrix derived from decimal digits)
 3. Caesar shift key :math:`p` (derived from period length)
 
-### 2.2 Matrix Formation
+2.2 Matrix Formation
+^^^^^^^^^^^^^^^^^^^^
 The key matrix :math:`K` is formed using four digits from the decimal expansion:
 
 .. math::
@@ -52,7 +54,8 @@ Requirements for :math:`K`:
 - :math:`\text{det}(K) \neq 0` (matrix must be invertible)
 - :math:`\text{det}(K) = u \cdot y - v \cdot x`
 
-### 2.3 Caesar Shift Calculation
+2.3 Caesar Shift Calculation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 For period :math:`d` of :math:`\frac{1}{n9}`:
 
 .. math::
@@ -61,12 +64,15 @@ For period :math:`d` of :math:`\frac{1}{n9}`:
 3. Encryption Process
 ---------------------
 
-### 3.1 Message Preprocessing
+3.1 Message Preprocessing
+^^^^^^^^^^^^^^^^^^^^^^^^
+
 1. Convert message to numerical values using alphabet mapping
 2. Apply Caesar shift of :math:`p` positions
 3. Form matrix :math:`M` of dimensions :math:`2 \times \lceil \frac{m}{2} \rceil` where :math:`m` is message length
 
-### 3.2 Matrix Encryption
+3.2 Matrix Encryption
+^^^^^^^^^^^^^^^^^^^^^
 The encryption process uses Hill cipher methodology:
 
 .. math::
@@ -80,7 +86,9 @@ where:
 4. Decryption Process
 ---------------------
 
-### 4.1 Matrix Decryption
+4.1 Matrix Decryption
+^^^^^^^^^^^^^^^^^^^^^
+
 The decryption process involves:
 1. Computing :math:`K^{-1}` (inverse of key matrix)
 2. Computing :math:`M = K^{-1} \cdot C`

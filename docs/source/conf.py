@@ -9,8 +9,8 @@ import sys
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = '89crypt | (ENcrypt)'
-copyright = '2025, Burak Güngör'
-author = 'Burak Güngör'
+copyright = '2025, Bruh141'
+author = 'Bruh141'
 release = '1.0.0'
 
 sys.path.insert(0, os.path.abspath('../../src/'))
