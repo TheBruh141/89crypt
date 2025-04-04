@@ -1,6 +1,6 @@
 # 89crypt | (ENcrypt)
 
-> A secure and efficient matrix-based encryption library for specific use cases developed for TUBITAK 2204-a project.
+> A secure and efficient matrix-based encryption library for specific use cases
 
 ## Features
 
