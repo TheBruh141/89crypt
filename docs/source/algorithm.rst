@@ -141,12 +141,12 @@ We begin by considering the decimal expansion of :math:`\frac{1}{49}`:
 Step 2: **Key Generation**
 
 - Primary key :math:`n = 4`
-- Matrix key :math:`K` is derived from the decimal digits around "89". We will extract two two-digit numbers, say :math:`u = 20`, :math:`v = 40`, :math:`x = 89`, and :math:`y = 79`, from the expansion.
+- Matrix key :math:`K` is derived from the decimal digits around "89". We will extract two two-digit numbers, say :math:`u = 4`, :math:`v = 4`, :math:`x = 7`, and :math:`y = 9`, from the expansion.
 
 Thus, the key matrix :math:`K` is:
 
 .. math::
-    K = \begin{bmatrix} 20 & 40 \\ 89 & 79 \end{bmatrix}
+    K = \begin{bmatrix} 4 & 4 \\ 7 & 9 \end{bmatrix}
 
 Step 3: **Caesar Shift Calculation**
 
@@ -174,20 +174,19 @@ Step 6: **Matrix Encryption**
 The encryption step involves matrix multiplication between the key matrix :math:`K` and the message matrix :math:`M`:
 
 .. math::
-    C = K \cdot M = \begin{bmatrix} 20 & 40 \\ 89 & 79 \end{bmatrix} \cdot \begin{bmatrix} 9 & 14 & 17 \\ 7 & 12 & 14 \end{bmatrix}
+    C = K \cdot M = \begin{bmatrix} 4 & 4 \\ 7 & 9 \end{bmatrix} \cdot \begin{bmatrix} 9 & 14 & 17 \\ 7 & 12 & 14 \end{bmatrix}
 
 Step 7: **Decryption**
 
 To decrypt the message, we compute the inverse of the key matrix :math:`K^{-1}`. First, we compute the determinant of :math:`K`:
 
 .. math::
-    \text{det}(K) = 20 \cdot 79 - 40 \cdot 89 = 1580 - 3560 = -1980
+    \text{det}(K) = 4 \cdot 9 - 4 \cdot 7 = 8
 
 Now, we calculate the inverse of :math:`K`:
 
 .. math::
-    K^{-1} = \frac{1}{\text{det}(K)} \begin{bmatrix} 79 & -40 \\ -89 & 20 \end{bmatrix}
-    K^{-1} = \frac{1}{-1980} \begin{bmatrix} 79 & -40 \\ -89 & 20 \end{bmatrix}
+    K^{-1} = \frac{1}{8} \begin{bmatrix} 9 & -4 \\ -7 & 4 \end{bmatrix}
 
 Step 8: **Final Message Recovery**
 

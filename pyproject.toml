@@ -54,6 +54,10 @@ dev = [
     "pytest-cov>=4.1.0",
 ]
 
+anim = [
+    "manim"
+]
+
 [project.urls]
 Homepage = "https://github.com/TheBruh141/89crypt"
 Repository = "https://github.com/TheBruh141/89crypt"
